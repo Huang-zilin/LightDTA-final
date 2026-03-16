@@ -92,8 +92,9 @@ https://mega.nz/file/YcFwnCLZ#PnNaH_YQ382JzVsIZNmyK4J6nhm1dGRmFiIz_vQoWsM
 The processed data include:
 ```
 data/
+├── generate_contact_maps.py              - Automated script for generating contact maps. [Original]
 ├── Davis / KIBA                          - DTA dataset directory for LightDTA
-│   └── ligands_can.txt                   - Drug ligands information (SMILES strings).[Processed]
+│   └── ligands_can.txt                   - Drug ligands information (SMILES strings). [Processed]
 │   └── proteins.txt                      - Protein sequences information. [Original]
 │   └── Y                                 - Binding affinity scores matrix. [Original]
 │   ├── (davis/kiba)_dict.txt             - Uniprot ID mapping for each protein. [Original]
@@ -130,12 +131,12 @@ python training_for_CPI.py
 Here is the detailed introduction of the optional parameters when running:
 ```
 --model: The model name, specifying the name of the model to be used.
- --epochs: The number of epochs, specifying the number of iterations for training the model on the entire dataset.
- --batch: The batch size, specifying the number of samples in each training batch.
- --LR: The learning rate, controlling the rate at which model parameters are updated.
- --device: The device, specifying the GPU device number used for training.
- --dataset: The dataset name, specifying the dataset used for model training.
- --num_workers: This parameter is an optional value in the Dataloader, and when its value is greater than 0, it enables 
+--epochs: The number of epochs, specifying the number of iterations for training the model on the entire dataset.
+--batch: The batch size, specifying the number of samples in each training batch.
+--LR: The learning rate, controlling the rate at which model parameters are updated.
+--device: The device, specifying the GPU device number used for training.
+--dataset: The dataset name, specifying the dataset used for model training.
+--num_workers: This parameter is an optional value in the Dataloader, and when its value is greater than 0, it enables
   multiprocessing for data processing.
 ```
 And the parameters was defaulted as:
@@ -157,7 +158,7 @@ LightDTA-final/
 │   └── [Davis/KIBA]
 │          └── [train_RWNet_best.model]
 │   └── [Human]
-│          └── [RWNet_Human.model]
+           └── [RWNet_Human.model]
 ```
 Based on these pre-trained models, you can perform DTA predictions by simply running the following command:
 ```
